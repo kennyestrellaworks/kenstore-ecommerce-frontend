@@ -1,0 +1,6 @@
+@use "../variables";
+
+.home {
+  padding-top: variables.$outlet-padding-top;
+  position: relative;
+}

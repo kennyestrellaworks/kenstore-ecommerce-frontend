@@ -1,0 +1,28 @@
+@use "../media-query";
+
+.category {
+  position: relative;
+  margin-top: 4rem;
+  &__container {
+    width: 120rem;
+    margin: 0 auto;
+    @include media-query.mediaQuery(viewport1200) {
+      width: 100%;
+    }
+  }
+  &__image {
+    height: 30rem;
+  }
+  &__paragraph {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  &__cards {
+    margin-top: 3rem;
+  }
+  &__heading {
+    margin-top: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,94 @@
+@use "media-query";
+@use "variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  // box-sizing: inherit;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%; // 1rem
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  //   background-color: tan;
+  background-color: variables.$color-white;
+  @include media-query.mediaQuery(viewport1200) {
+    font-size: 56.25%;
+  }
+  @include media-query.mediaQuery(viewport950) {
+    font-size: 50%;
+  }
+}
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+.main {
+  min-height: 85vh;
+}
+
+.wrapper {
+  width: 100%;
+
+  position: relative;
+  &__1920 {
+    width: 192rem;
+    margin: 0 auto;
+
+    position: relative;
+    @include media-query.mediaQuery(viewport1920) {
+      width: 100%;
+    }
+    &--content {
+      width: 120rem;
+      margin: 0 auto;
+      //   background-color: peru;
+      position: relative;
+      @include media-query.mediaQuery(viewport1200) {
+        width: 100%;
+        padding: 0 4rem;
+      }
+      @include media-query.mediaQuery(viewport790) {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+.absolute {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  padding: 1.2rem;
+  z-index: 999;
+}
+
+.fixed {
+  position: fixed;
+  width: 192rem;
+  color: #fff;
+  z-index: 999;
+  display: flex;
+  //   justify-content: right;
+  //   background-color: blue;
+  @include media-query.mediaQuery(viewport1920) {
+    width: 100%;
+  }
+  &__content {
+    width: 100%;
+  }
+}
+
+.hide {
+  display: none;
+}

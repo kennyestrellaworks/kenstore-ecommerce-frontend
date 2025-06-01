@@ -1,0 +1,9 @@
+@use "../media-query";
+
+.hamburger-menu {
+  display: none;
+  @include media-query.mediaQuery(viewport680) {
+    display: block;
+    cursor: pointer;
+  }
+}

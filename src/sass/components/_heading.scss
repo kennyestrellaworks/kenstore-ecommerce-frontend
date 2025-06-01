@@ -1,0 +1,17 @@
+@use "../variables";
+
+.heading {
+  &__primary {
+    color: variables.$color-black;
+    font-size: 3.4rem;
+    text-transform: uppercase;
+  }
+  &__secondary {
+    color: variables.$color-group-2a;
+    font-size: 2.4rem;
+  }
+  &__tertiary {
+    color: variables.$color-group-2a;
+    font-size: 1.6rem;
+  }
+}

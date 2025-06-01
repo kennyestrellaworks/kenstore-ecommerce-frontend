@@ -1,0 +1,26 @@
+@use "./base.scss";
+@use "./media-query";
+@use "./grid";
+@use "./variables";
+
+@use "./parts/header";
+@use "./parts/home";
+
+@use "./components/navbar";
+@use "./components/hamburger-menu";
+
+@use "./components/heading";
+@use "./components/paragraph";
+@use "./components/cards";
+@use "./components/footer";
+@use "./components/social-icons";
+@use "./components/buttons";
+@use "./components/quantity-counter";
+@use "./components/cart-preview";
+@use "./components/hero";
+@use "./components/scrolltop";
+
+@use "./pages/products";
+@use "./pages/single-product";
+@use "./pages/cart";
+@use "./pages/category";

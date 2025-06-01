@@ -1,0 +1,92 @@
+@use "../variables";
+@use "../media-query";
+
+.cart-badge {
+  position: relative;
+  z-index: 1200;
+  cursor: pointer;
+  &__wrapper {
+    position: absolute;
+    top: -11px;
+    left: 7px;
+  }
+  &__content {
+    background-color: variables.$color-group-1a;
+    border-radius: 5rem;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    left: -20px;
+    @include media-query.mediaQuery(viewport950) {
+      top: 3px;
+    }
+  }
+}
+
+.cart-preview {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the NavLink */
+  right: 0;
+  background-color: variables.$color-white;
+  border: 1px solid variables.$color-group-3a;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: variables.$transitionDefault;
+  width: 40rem;
+  padding: 4rem 0;
+  @include media-query.mediaQuery(viewport480) {
+    width: 30rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    cursor: pointer;
+    gap: 1rem;
+    padding: 0.4rem 1rem;
+    transition: variables.$transitionDefault;
+    &:not(:last-child) {
+      @include media-query.mediaQuery(viewport480) {
+        border-bottom: 1px solid variables.$color-group-2b;
+      }
+    }
+    @include media-query.mediaQuery(viewport480) {
+      flex-direction: column;
+    }
+    &:hover {
+      background-color: variables.$color-group-2c;
+    }
+  }
+  &__details {
+    // border: 1px solid blue;
+    width: 60%;
+    @include media-query.mediaQuery(viewport480) {
+      width: 100%;
+    }
+  }
+  &__image {
+    width: 16%;
+  }
+  &__price {
+    color: variables.$color-group-2d;
+    font-size: 1.2rem;
+  }
+  &__item-total-price {
+    // border: 1px solid red;
+    color: variables.$color-group-2a;
+    margin-left: auto;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+  }
+}

@@ -1,0 +1,72 @@
+@use "../variables";
+@use "../media-query";
+
+.button {
+  text-decoration: none;
+  border: none;
+  display: flex;
+
+  &__secondary {
+    display: flex;
+    align-items: center;
+    background-color: variables.$color-group-2c;
+    color: variables.$color-group-2b;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: variables.$transitionDefault;
+    & svg {
+      transition: variables.$transitionDefault;
+      fill: variables.$color-group-2b;
+    }
+    &:hover svg {
+      fill: variables.$color-group-1c;
+    }
+    &.active,
+    &:hover {
+      background-color: variables.$color-group-1b;
+      color: variables.$color-group-1c;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+  &__primary {
+    background-color: variables.$color-group-2b;
+    color: variables.$color-white;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+    transition: variables.$transitionDefault;
+    &:hover {
+      background-color: variables.$color-group-2d;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    & svg {
+      fill: variables.$color-white;
+      margin-right: 0.2rem;
+    }
+  }
+  &__tertiary {
+    border: none;
+    background-color: transparent;
+    padding: 0 2rem;
+    cursor: pointer;
+    color: variables.$color-group-2b;
+    transition: variables.$transitionDefault;
+    @include media-query.mediaQuery(viewport420) {
+      margin-top: 3rem;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: variables.$color-group-2d;
+    }
+  }
+}

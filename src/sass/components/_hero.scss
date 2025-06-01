@@ -1,0 +1,238 @@
+@use "../variables";
+@use "../media-query";
+
+.hero {
+  &__container {
+    padding-top: 8rem;
+    width: 100%;
+    position: relative;
+  }
+  &__content {
+    margin-top: auto;
+    position: relative;
+  }
+  &__slide {
+    position: relative;
+  }
+  &__title {
+    margin-top: auto;
+    position: relative;
+    z-index: 650;
+    color: variables.$color-white;
+    padding: 4rem;
+    font-size: 10rem;
+    width: 120rem;
+    margin: 0 auto;
+    @include media-query.mediaQuery(viewport1200) {
+      width: 100%;
+      padding: 0 2rem;
+    }
+    @include media-query.mediaQuery(viewport700) {
+      font-size: 6rem;
+    }
+    @include media-query.mediaQuery(viewport400) {
+      font-size: 3rem;
+    }
+    &-highlight {
+      color: variables.$color-group-2b;
+      @include media-query.mediaQuery(viewport400) {
+        font-size: 3rem;
+        color: variables.$color-white;
+      }
+    }
+  }
+}
+
+.hero-slider {
+  &__dots {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    padding: 3rem;
+    z-index: 660;
+  }
+  &__dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: variables.$color-group-3c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: variables.$transitionDefault;
+  }
+  &__dot.active {
+    background-color: variables.$color-group-2b;
+    outline: 1px solid white;
+  }
+  &__item {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    @include media-query.mediaQuery(viewport840) {
+      height: 75vh;
+    }
+    @include media-query.mediaQuery(viewport470) {
+      height: 62vh;
+    }
+    @include media-query.mediaQuery(viewport390) {
+      height: 64vh;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      z-index: 650;
+      pointer-events: none;
+    }
+  }
+  &__showcase-item-rating {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: variables.$color-group-2b;
+  }
+  &__main-image {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    z-index: 500;
+    @include media-query.mediaQuery(viewport840) {
+      height: 75vh;
+    }
+    @include media-query.mediaQuery(viewport470) {
+      height: 62vh;
+    }
+    @include media-query.mediaQuery(viewport390) {
+      height: 64vh;
+    }
+  }
+  &__showcase {
+    margin-top: auto;
+    position: relative;
+    padding: 0 3rem;
+    z-index: 650;
+    width: 120rem;
+    margin: 0 auto;
+    @include media-query.mediaQuery(viewport1200) {
+      width: 100%;
+      padding: 0 2rem;
+    }
+    @include media-query.mediaQuery(viewport700) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__showcase-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    @include media-query.mediaQuery(viewport980) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    @include media-query.mediaQuery(viewport700) {
+      flex-direction: row;
+      align-items: center;
+    }
+    @include media-query.mediaQuery(viewport400) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    &-details {
+      background: variables.$color-white;
+      width: 100%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 1rem 1rem 4rem;
+      margin-left: -2rem;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+      @include media-query.mediaQuery(viewport980) {
+        padding: 4rem 2rem 2rem 2rem;
+        margin-left: 0;
+        border-radius: 1.2rem;
+        margin-top: -2rem;
+      }
+      @include media-query.mediaQuery(viewport700) {
+        padding: 1rem 1rem 1rem 5rem;
+        margin-top: 0;
+        margin-left: -3rem;
+      }
+      @include media-query.mediaQuery(viewport400) {
+        padding: 4rem 1rem 1rem 1rem;
+        margin-left: 0;
+        border-radius: 1.2rem;
+        margin-top: -3rem;
+      }
+    }
+    &-heading,
+    &-price {
+      cursor: pointer;
+    }
+    &-heading {
+      margin-top: 1rem;
+      color: variables.$color-group-2d;
+      font-weight: bold;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1; /* Limit to 1 line */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: variables.$transitionDefault;
+    }
+    &-price {
+      color: variables.$color-group-2d;
+      transition: variables.$transitionDefault;
+    }
+  }
+  &__translatey {
+    transform: translateY(-8px);
+  }
+  &__scale1-05 {
+    transform: scale(1.05);
+  }
+  &__image-link {
+    transition: variables.$transitionDefault;
+  }
+  &__showcase-big-image {
+    width: 13rem;
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 4px 12px rgba(variables.$color-black, 0.3);
+    transition: variables.$transitionDefault;
+    cursor: pointer;
+    @include media-query.mediaQuery(viewport980) {
+      margin-left: 2rem;
+    }
+    @include media-query.mediaQuery(viewport700) {
+      margin-left: 0;
+    }
+    @include media-query.mediaQuery(viewport470) {
+      width: 10rem;
+    }
+    @include media-query.mediaQuery(viewport400) {
+      margin-left: 2rem;
+      width: 7rem;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

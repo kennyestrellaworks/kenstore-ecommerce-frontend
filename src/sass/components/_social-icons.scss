@@ -1,0 +1,14 @@
+@use "../variables";
+
+.social-icons {
+  &__wrapper {
+    display: flex;
+    gap: 0.3rem;
+  }
+  &__icons {
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}

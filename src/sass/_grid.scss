@@ -1,0 +1,104 @@
+@use "media-query";
+
+.grid-of-2 {
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    @include media-query.mediaQuery(viewport560) {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+}
+
+.grid-of-3 {
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    @include media-query.mediaQuery(viewport700) {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport560) {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+}
+
+.grid-of-4 {
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    @include media-query.mediaQuery(viewport950) {
+      grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport750) {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport560) {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+}
+
+.grid-of-5 {
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    @include media-query.mediaQuery(viewport1050) {
+      grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport880) {
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport720) {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport560) {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+}
+
+.grid-of-6 {
+  &__wrap {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14%, 1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    @include media-query.mediaQuery(viewport1200) {
+      grid-template-columns: repeat(auto-fit, minmax(16%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport1020) {
+      grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport890) {
+      grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport730) {
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport710) {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+    @include media-query.mediaQuery(viewport560) {
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+  }
+}

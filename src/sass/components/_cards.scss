@@ -1,0 +1,32 @@
+@use "../variables";
+
+.cards {
+  position: relative;
+}
+.cards-v1 {
+  padding: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: variables.$color-white;
+  box-shadow: variables.$boxShadowDefault;
+  transition: variables.$transitionDefault;
+  cursor: pointer;
+  & a {
+    text-decoration: none;
+  }
+  &:hover {
+    transform: translateY(-5px);
+  }
+  &__heading {
+    transition: variables.$transitionDefault;
+    color: variables.$color-group-2a;
+    font-size: 2.4rem;
+  }
+  &:hover &__heading {
+    color: variables.$color-group-2d;
+  }
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+}

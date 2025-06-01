@@ -1,0 +1,68 @@
+@use "../variables";
+@use "../media-query";
+
+.navbar {
+  position: relative;
+  @include media-query.mediaQuery(viewport680) {
+    // display: none;
+    display: flex;
+    position: absolute;
+    right: -24rem;
+    top: 8rem;
+    background: variables.$color-group-2a;
+    height: 100vh;
+    transition: variables.$transitionDefault;
+  }
+  &__show {
+    right: 0;
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    @include media-query.mediaQuery(viewport680) {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: unset;
+      padding: 4rem 6rem;
+    }
+  }
+  &__link {
+    color: variables.$color-group-2b;
+    text-decoration: none;
+    font-size: 1.6rem;
+    // border: 2px solid red;
+    @include media-query.mediaQuery(viewport680) {
+      font-size: 2rem;
+    }
+    &.active,
+    &:hover {
+      color: variables.$color-white;
+      transition: variables.$transitionDefault;
+    }
+  }
+  &__link {
+    position: relative;
+    & svg {
+      fill: variables.$color-group-2b;
+      transition: variables.$transitionDefault;
+    }
+
+    &:hover svg,
+    &.active svg {
+      fill: variables.$color-white;
+    }
+  }
+  &__cart {
+    position: relative;
+    display: inline-block;
+    transition: variables.$transitionDefault;
+    &:hover .cart-preview {
+      display: block;
+    }
+    &:hover .navbar__link svg {
+      fill: variables.$color-white;
+    }
+  }
+}

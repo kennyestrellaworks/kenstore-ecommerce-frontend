@@ -1,0 +1,12 @@
+@use "../variables";
+@use "../media-query";
+
+.paragraph {
+  &__primary {
+    color: variables.$color-group-2a;
+    width: 70%;
+    @include media-query.mediaQuery(viewport600) {
+      width: 100%;
+    }
+  }
+}
