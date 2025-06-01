@@ -4,10 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"json-server -p 9600 -w ./src/data/data.json\"",
+    "start": "vite preview",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:netlify": "netlify dev",
+    "dev:json": "concurrently \"vite\" \"json-server -p 9600 -w ./src/data/data.json\""
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "react": "^19.1.0",
