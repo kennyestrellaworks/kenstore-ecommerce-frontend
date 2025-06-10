@@ -1,4 +1,4 @@
-# VegeBurg - A Modern Vegetarian & Vegan Restaurant Web Template
+# Kenstore Products and Cart static page
 
 **Kenstore** is a sleek and responsive web template designed for an ecommerce product page. I was tasked to create a web template where product data that came from a json file can be used to populate content for the Product page. The focus for this task was the Product and Cart page.
 
