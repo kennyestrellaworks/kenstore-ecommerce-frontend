@@ -16,7 +16,7 @@ export const Product = () => {
 
   const categoryFilter = searchParams.get("category");
 
-  // console.log("categoryFilter ", categoryFilter);
+  console.log("categoryFilter ", categoryFilter);
 
   const activeProducts = categoryFilter
     ? productsData.filter((product) => product.category === categoryFilter)

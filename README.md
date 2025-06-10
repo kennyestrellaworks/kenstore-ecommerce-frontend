@@ -1,29 +1,60 @@
-# React + Vite
+# VegeBurg - A Modern Vegetarian & Vegan Restaurant Web Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Kenstore** is a sleek and responsive web template designed for an ecommerce product page. I was tasked to create a web template where product data that came from a json file can be used to populate content for the Product page. The focus for this task was the Product and Cart page.
 
-Currently, two official plugins are available:
+![](readme-preview.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Demo](https://kenstore.netlify.app/)
 
-## Expanding the ESLint configuration
+### Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img width="22px" src="react-original.svg"> <img width="22px" src="javascript-original.svg"> <img width="22px" src="sass-original.svg"> <img width="22px" src="html5-plain.svg">
 
-npm init y
-npm create vite@latest ./ -- --template react
+### Tools
+
+<img width="22px" src="figma-original.svg"> <img width="22px" src="photoshop-plain.svg"> <img width="22px" src="illustrator-plain.svg">
+
+## Key Areas
+
+- **Products** Product content was from **data/data.json** and we need to run **json-server** to use it. I modified **vite.config.js** to run json-server at port 9600, then local port at 9500. By default, all products are populated to the Products page but we can also click the categories to filter them out.
+
+- **Cart** This page performs some logic of an ecommerce cart page like computing the product to its quanity, then adding them all to get a total amount. The items selected to the cart are stored in Local Storage only.
+
+## Features
+
+- **Responsive Design:** Optimized for seamless viewing across all devices, from desktops to mobile phones.
+- **Sass Styling:** Leverages the power of Sass for maintainable, scalable, and beautifully crafted styles.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/kennyestrellaworks/kenstore-ecommerce-frontend.git
+```
+
+Navigate into the project directory:
+
+```bash
+cd kenstore-ecommerce-frontend
+```
+
+Install the dependencies:
+
+```bash
 npm install
-npm i sass --save-dev
-npm i react-router-dom
+```
 
-//// Run local server, you can choose 9600
-json-server -p 9600 -w ./src/data/data.json
+### Running the Project
 
-// https://vite.dev/config/
-export default defineConfig({
-plugins: [react()],
-server: {
-port: 3500,
-},
-});
+Development:
+
+```bash
+npm run dev:json
+```
+
+Using netlify:
+
+```bash
+npm run dev:netlify
+```

@@ -21,9 +21,7 @@ export const QuantityCounter = ({
       <div className="quantity-counter">
         <button
           onClick={decrease}
-          className={`quantity-btn ${
-            quantity < 2 || disableButtons ? "quantity-btn__disabled" : ""
-          }`}
+          className="quantity-btn"
           disabled={quantity < 2 || disableButtons}
         >
           <svg
@@ -38,11 +36,7 @@ export const QuantityCounter = ({
         <span className="quantity-number">{quantity ?? 1}</span>
         <button
           onClick={increase}
-          className={`quantity-btn ${
-            quantity === tempStockCount || disableButtons
-              ? "quantity-btn__disabled"
-              : ""
-          }`}
+          className="quantity-btn"
           disabled={
             quantity === tempStockCount ||
             tempStockCount === 0 ||
