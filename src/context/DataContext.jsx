@@ -7,48 +7,21 @@ export const DataProvider = ({ children }) => {
   const [productsData, setProductsData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch("/.netlify/functions/get-data");
-
-  //       if (!res.ok) {
-  //         throw new Error("Failed to fetch data!");
-  //       }
-
-  //       const data = await res.json();
-
-  //       // assuming your JSON has keys like system and products
-  //       setSystemData(data.system);
-  //       setProductsData(data.products);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // For json-server
+  // For netlify
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [systemRes, productsRes] = await Promise.all([
-          fetch("http://localhost:9600/system"),
-          fetch("http://localhost:9600/products"),
-        ]);
+        const res = await fetch("/.netlify/functions/get-data");
 
-        if (!systemRes.ok || !productsRes.ok) {
+        if (!res.ok) {
           throw new Error("Failed to fetch data!");
         }
 
-        const systemData = await systemRes.json();
-        const productsData = await productsRes.json();
+        const data = await res.json();
 
-        setSystemData(systemData);
-        setProductsData(productsData);
+        // assuming your JSON has keys like system and products
+        setSystemData(data.system);
+        setProductsData(data.products);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -58,6 +31,34 @@ export const DataProvider = ({ children }) => {
 
     fetchData();
   }, []);
+
+  // // For json-server
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const [systemRes, productsRes] = await Promise.all([
+  //         fetch("http://localhost:9600/system"),
+  //         fetch("http://localhost:9600/products"),
+  //       ]);
+
+  //       if (!systemRes.ok || !productsRes.ok) {
+  //         throw new Error("Failed to fetch data!");
+  //       }
+
+  //       const systemData = await systemRes.json();
+  //       const productsData = await productsRes.json();
+
+  //       setSystemData(systemData);
+  //       setProductsData(productsData);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   const getSingleProduct = (id) => {
     return productsData.find((item) => item.id === id);

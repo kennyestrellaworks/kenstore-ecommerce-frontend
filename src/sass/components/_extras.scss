@@ -1,0 +1,20 @@
+.extras {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  &__container {
+    width: 40rem;
+  }
+  &__heading {
+    text-align: center;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+  }
+}

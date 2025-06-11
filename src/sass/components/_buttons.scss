@@ -51,7 +51,9 @@
     }
     & svg {
       fill: variables.$color-white;
-      margin-right: 0.2rem;
+      margin-right: 0.6rem;
+      height: 2rem;
+      width: 2rem;
     }
   }
   &__tertiary {
